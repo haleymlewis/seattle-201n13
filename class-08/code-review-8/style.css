@@ -1,0 +1,39 @@
+* {
+  font-family: 'Helvetica', sans-serif;
+  /*outline: 1px dotted green;*/
+}
+
+body {
+    background-color: #dbd4d4;
+}
+
+h1, h2 {
+  font-family: 'Righteous', cursive;
+  color: rgb(11, 70, 24);
+}
+
+td {
+  background-color: salmon;
+  padding: 5px;
+	border-radius: 8px;
+  border: 1px solid black;
+  font-size: 1.2em;
+}
+
+th {
+	background-color: gray;
+	color: white;
+  padding: 2px;
+  border-radius: 8px;
+  font-size: 1.2em;
+
+}
+
+label {
+  color: rgb(250, 241, 114);
+}
+
+legend {
+  color: rgb(114, 200, 250);
+  font-family: 'Righteous', cursive;
+}

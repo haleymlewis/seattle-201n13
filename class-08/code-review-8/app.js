@@ -29,7 +29,7 @@ function CookieStand(locationName, minCustomersPerHour, maxCustomersPerHour, avg
 
 CookieStand.prototype.render =  function() {
   this.calcCookiesEachHour();
-  
+
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
 
@@ -54,7 +54,7 @@ function random(min, max) {
 
 function makeHeaderRow() {
   var trEl = document.createElement('tr');
-  
+
   var thEl = document.createElement('th');
   thEl.textContent = 'Locations';
   trEl.appendChild(thEl);
@@ -84,4 +84,5 @@ var allShops = [pikePlace, seatacAirport, seattleCenter, capitolHill, alki];
   for(var i = 0; i < allShops.length; i++) {
     allShops[i].render();
   }
+  
 })();
