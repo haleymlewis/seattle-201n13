@@ -54,19 +54,39 @@ function random(min, max) {
 
 function makeHeaderRow() {
   var trEl = document.createElement('tr');
-
   var thEl = document.createElement('th');
   thEl.textContent = 'Locations';
   trEl.appendChild(thEl);
-
   for(var i = 0; i < hours.length; i++) {
     thEl = document.createElement('th');
     thEl.textContent = hours[i];
     trEl.appendChild(thEl);
   }
-
   thEl = document.createElement('th');
   thEl.textContent = 'Location Totals';
+  trEl.appendChild(thEl);
+  theTable.appendChild(trEl);
+}
+
+function makeFooterRow() {
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = 'Hourly Totals For All Locations';
+  trEl.appendChild(thEl);
+  var totalOfTotals = 0;
+  var hourlyTotal = 0;
+  for (var i = 0; i < hours.length; i++) {
+    hourlyTotal = 0;
+    for (var j = 0; j < allShops.length; j++) {
+      hourlyTotal += allShops[j].cookiesEachHour[i];
+      totalOfTotals += allShops[j].cookiesEachHour[i];
+    }
+    thEl = document.createElement('th');
+    thEl.textContent = hourlyTotal;
+    trEl.appendChild(thEl);
+  }
+  thEl = document.createElement('th');
+  thEl.textContent = totalOfTotals;
   trEl.appendChild(thEl);
   theTable.appendChild(trEl);
 }
@@ -84,5 +104,5 @@ var allShops = [pikePlace, seatacAirport, seattleCenter, capitolHill, alki];
   for(var i = 0; i < allShops.length; i++) {
     allShops[i].render();
   }
-  
+  makeFooterRow();
 })();
